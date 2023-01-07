@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "2fd3ce5b-25fb-451c-ba2a-8cc7e4bd5d0a",
+		"name": "oauthjwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4557074"
+	},
+	"item": [
+		{
+			"name": "getAccessToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "client1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "myClientSecretValue",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://auth-server:8000/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"auth-server"
+					],
+					"port": "8000",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIyN2YwZThjNi04ZGZjLTRiYjEtODNiNy04NjUyYWU5NWI3N2EiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQxIiwiYXVkIjoiY2xpZW50MSIsIm5iZiI6MTY3MzA3NTA1NSwiaXNzIjoiaHR0cDpcL1wvYXV0aC1zZXJ2ZXI6ODAwMCIsImV4cCI6MTY3MzA3NTM1NSwiaWF0IjoxNjczMDc1MDU1fQ.apEp2A-lZRD1cv-3ezPiLAfDV760b6wXiQ-REmZvQI2xqMumqC1i_qnFRUqbvWLbazG0QVq3ziyrouXXdGkvI4vdik3HcnxO2dUuZE3VcUsqFqYNpKg4T6UbicO6swJ58twlmiZBgGo_jokRE5ABSvqM58ERyYMlM66-aOqUfzcPjgPNNfTdnNtFmjKxM3HxU7EbChL_yaHqX7zbmYzTPdtf8kRRPFcixWnpc6DlluU7RIwIx3qeTjt0raj038Bfgzaf20nMT5qQxZ1R2WiRXp2MiJDqf6aCWzm-OIylTtacOKNLS-svoiA7y9EeMjcbjfjjc9bROMFE-FaRr9Dc5Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8091/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPosts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIyN2YwZThjNi04ZGZjLTRiYjEtODNiNy04NjUyYWU5NWI3N2EiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQxIiwiYXVkIjoiY2xpZW50MSIsIm5iZiI6MTY3MzA3NTA1NSwiaXNzIjoiaHR0cDpcL1wvYXV0aC1zZXJ2ZXI6ODAwMCIsImV4cCI6MTY3MzA3NTM1NSwiaWF0IjoxNjczMDc1MDU1fQ.apEp2A-lZRD1cv-3ezPiLAfDV760b6wXiQ-REmZvQI2xqMumqC1i_qnFRUqbvWLbazG0QVq3ziyrouXXdGkvI4vdik3HcnxO2dUuZE3VcUsqFqYNpKg4T6UbicO6swJ58twlmiZBgGo_jokRE5ABSvqM58ERyYMlM66-aOqUfzcPjgPNNfTdnNtFmjKxM3HxU7EbChL_yaHqX7zbmYzTPdtf8kRRPFcixWnpc6DlluU7RIwIx3qeTjt0raj038Bfgzaf20nMT5qQxZ1R2WiRXp2MiJDqf6aCWzm-OIylTtacOKNLS-svoiA7y9EeMjcbjfjjc9bROMFE-FaRr9Dc5Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8091/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getComments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIyN2YwZThjNi04ZGZjLTRiYjEtODNiNy04NjUyYWU5NWI3N2EiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQxIiwiYXVkIjoiY2xpZW50MSIsIm5iZiI6MTY3MzA3NTA1NSwiaXNzIjoiaHR0cDpcL1wvYXV0aC1zZXJ2ZXI6ODAwMCIsImV4cCI6MTY3MzA3NTM1NSwiaWF0IjoxNjczMDc1MDU1fQ.apEp2A-lZRD1cv-3ezPiLAfDV760b6wXiQ-REmZvQI2xqMumqC1i_qnFRUqbvWLbazG0QVq3ziyrouXXdGkvI4vdik3HcnxO2dUuZE3VcUsqFqYNpKg4T6UbicO6swJ58twlmiZBgGo_jokRE5ABSvqM58ERyYMlM66-aOqUfzcPjgPNNfTdnNtFmjKxM3HxU7EbChL_yaHqX7zbmYzTPdtf8kRRPFcixWnpc6DlluU7RIwIx3qeTjt0raj038Bfgzaf20nMT5qQxZ1R2WiRXp2MiJDqf6aCWzm-OIylTtacOKNLS-svoiA7y9EeMjcbjfjjc9bROMFE-FaRr9Dc5Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8091/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserPosts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIyN2YwZThjNi04ZGZjLTRiYjEtODNiNy04NjUyYWU5NWI3N2EiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQxIiwiYXVkIjoiY2xpZW50MSIsIm5iZiI6MTY3MzA3NTA1NSwiaXNzIjoiaHR0cDpcL1wvYXV0aC1zZXJ2ZXI6ODAwMCIsImV4cCI6MTY3MzA3NTM1NSwiaWF0IjoxNjczMDc1MDU1fQ.apEp2A-lZRD1cv-3ezPiLAfDV760b6wXiQ-REmZvQI2xqMumqC1i_qnFRUqbvWLbazG0QVq3ziyrouXXdGkvI4vdik3HcnxO2dUuZE3VcUsqFqYNpKg4T6UbicO6swJ58twlmiZBgGo_jokRE5ABSvqM58ERyYMlM66-aOqUfzcPjgPNNfTdnNtFmjKxM3HxU7EbChL_yaHqX7zbmYzTPdtf8kRRPFcixWnpc6DlluU7RIwIx3qeTjt0raj038Bfgzaf20nMT5qQxZ1R2WiRXp2MiJDqf6aCWzm-OIylTtacOKNLS-svoiA7y9EeMjcbjfjjc9bROMFE-FaRr9Dc5Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8091/posts/4375",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"posts",
+						"4375"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
